@@ -1,17 +1,28 @@
 package br.com.jarjar.spring.entities;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.Objects;
 
 
 
+
+@Entity
+@Table(name = "tb_user")
 public class User implements Serializable {
 
 
     @Serial
     private static final long serialVersionUID = 1L;
 
+
+    @Id
+    @GeneratedValue
     private Long id;
     private String name;
     private String email;
